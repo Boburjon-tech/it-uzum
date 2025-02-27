@@ -51,12 +51,6 @@ body {
     height:55px;
 }
 
-.site_logo:hover {
-    transform: m;
-}
-
-.site_logo_img {
-}
 .categories {
     display: flex;
     gap:30px;
