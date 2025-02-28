@@ -27,7 +27,11 @@ function publishProd({ products }) {
         price.setAttribute("class", "price");
         price.textContent = `Price : $${item.price}`;
 
-        product.append(image, title, price);
+        const sale_button = document.createElement("button");
+        sale_button.textContent = "Cart";
+        sale_button.setAttribute("class","sale_button");
+
+        product.append(image, title, price,sale_button);
 
         linear_div.appendChild(product);
 

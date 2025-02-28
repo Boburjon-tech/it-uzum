@@ -131,3 +131,26 @@ body {
     color: green;
     font-weight: bold;
 }
+
+.sale_button {
+    width:70px;
+    height:30px;
+    margin-left: 250px;
+    margin-bottom: 20px;
+    outline: none;
+    border-bottom-right-radius:50px;
+    border-top-left-radius:50px;
+    background-color: red;
+    color:white;
+    border:red;
+}
+
+.sale_button:hover {
+    background-color: #fff;
+    color:red;
+    border:2px solid red;
+}
+
+.sale_button:active {
+    opacity:0.5;
+}
