@@ -105,14 +105,7 @@ body {
     border-radius: 15px;
 }
 
-.product {
-    flex: 1;
-    padding: 10px;
-    background: white;
-    border-radius: 8px;
-    text-align: start;
-    
-}
+
 
 .image {
     width: 100%;
@@ -154,3 +147,31 @@ body {
 .sale_button:active {
     opacity:0.5;
 }
+
+.product {
+    flex: 1;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.product__image {
+}
+.about__product {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.product__title {
+}
+.product__price {
+}
+.product__description {
+    width:100%;
+    max-width: 220px;
+    margin-bottom: 5px;
+}
+
+

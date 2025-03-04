@@ -1,44 +1,29 @@
-const url = "https://dummyjson.com/products";
 
-const productStore = document.querySelector(".products");
+
+const url = "https://dummyjson.com/product";
+
+
+
+const productse = document.querySelector(".products");
+const templates = document.querySelector("#template");
 
 function publishProd({ products }) {
     let linear_div; 
-    
-    products.forEach((item, index) => {
-        
-        if (index % 3 === 0) {
-            linear_div = document.createElement("div");
-            linear_div.setAttribute("class", "linear_div");
-        }
+    products.forEach((product,index) => {
+            if (index % 3 === 0) {
+                linear_div = document.createElement("div");
+                linear_div.setAttribute("class","linear_div");
+            }
 
-        const product = document.createElement("div");
-        product.setAttribute("class", "product");
-
-        const image = document.createElement("img");
-        image.setAttribute("class", "image");
-        image.src = item.thumbnail;
-
-        const title = document.createElement("h2");
-        title.setAttribute("class", "title");
-        title.textContent = item.title;
-
-        const price = document.createElement("p");
-        price.setAttribute("class", "price");
-        price.textContent = `Price : $${item.price}`;
-
-        const sale_button = document.createElement("button");
-        sale_button.textContent = "Cart";
-        sale_button.setAttribute("class","sale_button");
-
-        product.append(image, title, price,sale_button);
-
-        linear_div.appendChild(product);
-
-        if (index % 3 === 2 || index === products.length - 1) {
-            productStore.appendChild(linear_div);
-        }
+            let clone = templates.content.cloneNode(true);
+            clone.querySelector(".product__image").src = product.thumbnail
+            clone.querySelector(".product__title").textContent = product.title;
+            clone.querySelector(".product__price").textContent = `$${product.price}`;
+            clone.querySelector(".product__description").textContent = product.description;
+            linear_div.appendChild(clone);
+            productse.appendChild(linear_div);
     });
+   
 }
 
 fetch(url)
